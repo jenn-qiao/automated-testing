@@ -1,6 +1,31 @@
 "use strict";
 
 /**
+ * Find the longest string in an array.
+ * In the case of a tie, returns the earlier string in the array.
+ *
+ * @param {string[]} stringArr - array of strings
+ * @returns {string} - the longest string
+ */
+function findLongestString(stringArr) {
+  let longestString = stringArr[0];
+  for (let str of stringArr) {
+    if (str.length > longestString.length) {
+      longestString = str;
+    }
+  }
+  return longestString;
+}
+
+// export function so it can be used in test file
+module.exports = findLongestString;
+
+
+
+
+"use strict";
+
+/**
  * Find the shortest string in an array.
  * In the case of a tie, returns the earlier string in the array.
  *
@@ -14,7 +39,7 @@ function findShortestString(stringArr) {
       shortestString = str;
     }
   }
-  return shortestString.length;
+  return shortestString;
 }
 
 // export function so it can be used in test file
